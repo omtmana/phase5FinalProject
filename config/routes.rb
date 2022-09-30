@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Users.rb
+  get '/users', to: 'users#index'
+  get '/users/:id', to: 'users#show'
+  # get '/me', to: 'users#show'
+  # post '/signup', to: 'users#create'
+  post '/users', to: 'users#create'
+  patch '/users/:id', to: 'users#update'
+  # delete 'users/:id', to: 'users#destroy'
+  
+  #Transactions.rb
+  get '/transactions', to: 'transactions#index'
+  post '/transactions', to: 'transaction#create'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  #Friendships.rb
+  post '/friendships', to: 'friendships#create'
+
 end
